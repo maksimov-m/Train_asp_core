@@ -31,8 +31,8 @@ app.Run(
 
        switch (context.Request.Method)
        {
-           case "PUT":
-               PutRequest(context);
+           case "POST":
+               PostRequest(context);
                break;
            case "DELETE":
                DeleteRequest(context);
@@ -134,7 +134,7 @@ async void DeleteRequest(HttpContext context)
 }
 
 //Добавление пользователя
-async void PutRequest(HttpContext context)
+async void PostRequest(HttpContext context)
 {
     var req = await context.Request.ReadFromJsonAsync<ReadRequest>();
 
